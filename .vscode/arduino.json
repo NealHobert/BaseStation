@@ -1,0 +1,6 @@
+{
+    "sketch": "DCCpp_Uno/DCCpp_Uno.ino",
+    "board": "arduino:avr:mega",
+    "configuration": "cpu=atmega2560",
+    "port": "/dev/tty.usbmodem14101"
+}

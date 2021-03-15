@@ -189,7 +189,8 @@ void Output::load(){
     tt=create(data.id,data.pin,data.iFlag);
     tt->data.oStatus=bitRead(tt->data.iFlag,1)?bitRead(tt->data.iFlag,2):data.oStatus;      // restore status to EEPROM value is bit 1 of iFlag=0, otherwise set to value of bit 2 of iFlag
     digitalWrite(tt->data.pin,tt->data.oStatus ^ bitRead(tt->data.iFlag,0));
-    pinMode(tt->data.pin,OUTPUT);
+    pinMode(tt->data.pin,OUTPUT);   //initialize pin as output
+    digitalWrite(data.pin, LOW);    //set pin to LOW
     tt->num=EEStore::pointer();
     EEStore::advance(sizeof(tt->data));
   }  
